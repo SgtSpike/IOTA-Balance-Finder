@@ -8,9 +8,10 @@ var status = 'checking'
 var snapshotSep = fs.readFileSync('snapshot_september.txt').toString().split("\n");
 var snapshotOct = fs.readFileSync('snapshot_october.txt').toString().split("\n");
 
+//Older seeds were not required to be 81 characters in length.  Should skip this check, or only provide a warning and continue.
 if (seed.length !== 81) {
   console.error("Seed is not 81 characters!")
-  return
+  //return
 }
 
 const readline = require('readline');
